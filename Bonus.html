@@ -1,0 +1,57 @@
+<html>
+	<head>
+	
+		<meta charset="UTF-8">
+		<Title>Bonus</Title>
+		<script type="text/javascript" src="navigation.js"> </script>
+		<link type="text/css" rel="stylesheet" media="all" href="Style1.css" />
+		<SCRIPT LANGUAGE="JavaScript">
+
+			Maintenant = new Date;
+			TempMaintenant = Maintenant.getTime();
+			Future = new Date(2019, 11, 25);
+			TempFuture = Future.getTime();
+			DiffSec = Math.floor((TempFuture-TempMaintenant)/1000);
+			DiffMin = Math.floor(DiffSec/60);
+			Diffheure = Math.floor(DiffMin/60);
+			DiffJour = Math.floor(Diffheure/24);
+
+			while (DiffMin>=60){
+				DiffMin = DiffMin-60;
+			}
+
+			while (Diffheure>=24){
+				Diffheure = Diffheure-24;
+			}
+		
+			while (DiffSec>=60){
+				DiffSec = DiffSec-60;
+			}
+
+		</SCRIPT>
+	</head>
+	<body class="bodybonus">
+		<div ID="div-banner">
+			<ul>
+				<li><a href="Presentation.html">Prensentation</a></li>
+				<li><a href="avantage.html">Avantage/Inconvenient</a></li>
+				<li><a href="pourquoi.html">Pourquoi ?</a></li>
+				<li><a href="Bonus.html"><img src="Sapin.png" alt="BONUS" width="15" height="15"></a></li>
+			</ul>
+		</div>	
+		<div class="printnoel"><!--	affichage du décompte des jours avant Noel -->
+
+			<div align="center">
+
+				<script language="JavaScript">
+					if (DiffJour == 0) {	
+						document.write('Le Père Noël passe ce soir!')
+					} 
+					else {	
+						document.write('Le Père Noël passe dans ' + DiffJour + ' jours, '+ Diffheure + ' heures et '+ DiffMin + ' minutes!')
+					}; 
+				</script>
+			</div>
+		</div>
+	</body>
+</html>
